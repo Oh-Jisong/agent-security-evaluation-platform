@@ -1,0 +1,18 @@
+[
+  {
+    "scenario_id":"",
+    "owner":"",
+    "attack_category":"",
+    "attack_name":"",
+    "primary_stage":"",
+    "title":"",
+    "description":"",
+    "document_text":"",
+    "user_prompt":"",
+    "external_context":"",
+    "expected_bad_behavior":"",
+    "success_condition":"",
+    "recommended_defenses": [],
+    "notes":""
+  }
+]

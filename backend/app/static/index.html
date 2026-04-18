@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Secure AI Agent Playground</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Secure AI Agent Playground</h1>
+      <p>Attack → Defense → Evaluation for AI Agents</p>
+    </header>
+
+    <main class="grid">
+      <section class="card">
+        <h2>Scenario</h2>
+        <label for="scenarioSelect">Sample Scenario</label>
+        <select id="scenarioSelect"></select>
+
+        <label>Document Text</label>
+        <textarea id="documentText" rows="8"></textarea>
+
+        <label>User Prompt</label>
+        <textarea id="userPrompt" rows="5"></textarea>
+
+        <label>External Context</label>
+        <textarea id="externalContext" rows="4"></textarea>
+      </section>
+
+      <section class="card">
+        <h2>Defenses</h2>
+        <label><input type="checkbox" value="Input Filter" /> Input Filter</label>
+        <label><input type="checkbox" value="Context Sanitization" /> Context Sanitization</label>
+        <label><input type="checkbox" value="Risk Scoring" /> Risk Scoring</label>
+        <label><input type="checkbox" value="Output Validation" /> Output Validation</label>
+        <label><input type="checkbox" value="Action Guard" /> Action Guard</label>
+
+        <button id="runBtn">Run Scenario</button>
+      </section>
+
+      <section class="card">
+        <h2>Result</h2>
+        <p><strong>Attack Category:</strong> <span id="attackCategory">-</span></p>
+        <p><strong>Attack Name:</strong> <span id="attackName">-</span></p>
+        <p><strong>Risk Score:</strong> <span id="riskScore">-</span></p>
+        <p><strong>Decision:</strong> <span id="decision" class="badge">-</span></p>
+        <p><strong>Blocked Stage:</strong> <span id="blockedStage">-</span></p>
+        <p><strong>Attack Success:</strong> <span id="attackSuccess" class="badge">-</span></p>
+        <p><strong>Detection Success:</strong> <span id="detectionSuccess" class="badge">-</span></p>
+
+        <label>Final Response</label>
+        <textarea id="finalResponse" rows="8" readonly></textarea>
+
+        <label>Notes</label>
+        <textarea id="notes" rows="5" readonly></textarea>
+      </section>
+    </main>
+
+    <section class="dashboard-grid">
+      <div class="card stat-card">
+        <h3>Total Runs</h3>
+        <p id="totalRuns">0</p>
+      </div>
+      <div class="card stat-card">
+        <h3>Blocked Runs</h3>
+        <p id="blockedRuns">0</p>
+      </div>
+      <div class="card stat-card">
+        <h3>Successful Attacks</h3>
+        <p id="successfulAttacks">0</p>
+      </div>
+    </section>
+
+    <section class="grid charts-grid">
+      <section class="card">
+        <h2>Attack Category Summary</h2>
+        <canvas id="attackChart" height="220"></canvas>
+      </section>
+      <section class="card">
+        <h2>Blocked Stage Summary</h2>
+        <canvas id="stageChart" height="220"></canvas>
+      </section>
+    </section>
+
+    <section class="card log-card">
+      <h2>Execution Logs</h2>
+      <table id="logTable">
+        <thead>
+          <tr>
+            <th>Run ID</th>
+            <th>Scenario ID</th>
+            <th>Attack</th>
+            <th>Defenses</th>
+            <th>Risk</th>
+            <th>Decision</th>
+            <th>Blocked Stage</th>
+            <th>Attack Success</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>
